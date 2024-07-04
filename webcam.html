@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/web.css">
+    <title>Compare-Look</title>
+</head>
+
+<body>
+    <nav class="fnav">
+      <a href="/index.html">
+        <img src="/images/main_logo.svg" alt="">
+      </a>
+        <img src="/images/new-toll-number.webp" alt="">
+        <input type="text" placeholder="What are you looking for">
+        <p>Track Order</p>
+        <p><a href="/login.html" style="text-decoration: none; color: rgb(27, 27, 60);">Sign In</a> & <a href="/index1.html" style="text-decoration: none; color: rgb(27, 27, 60);">Sign Up</a></p>
+        <p><i class="ri-heart-line"></i> Wish List</p>
+        <p><i class="ri-shopping-bag-line"></i> Cart</p>
+    </nav>
+
+    <nav class="snav">
+        <p>EYEGLASSES</p>
+        <p>COMPUTER GLASSES</p>
+        <p>KIDS GLASSES</p>
+        <p>CONTACT LENSES</p>
+        <p>SUNGLASSES</p>
+        <p>HOME EYE-TEST</p>
+        <p>STORE LOCATOR</p>
+        <img src="/images/3dtryon1.webp" alt="">
+        <img src="/images/blulogo.webp" alt="">
+        <img src="/images/gold_max_logo_dc.webp" alt="">
+    </nav>
+
+
+    <div class="container">
+      <p>Face a light source, align your face, take off your glasses, and tuck your hair behind your ears</p>
+      <div class="webcam">
+        <div id="camera"></div>
+      </div>
+      <button class="btn" onclick="take_snapshot()">Take Photo</button>
+      <div id="results"></div>
+    </div>
+
+    <div class="footer">
+        <div class="list">
+          <ul>
+            <li>
+              <h2>SERVICES</h2>
+              <a>Store Locator</a>
+              <a>Enter My Power</a>
+              <a>Buying Guide</a>
+              <a>Frame Size</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="list">
+          <ul>
+            <li>
+              <h2>ABOUT US</h2>
+              <a>We Are Hiring</a><br>
+              <a>Refer & Earn</a><br>
+              <a>About Us</a><br>
+              <a>Lenskart Coupons</a><br>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="list">
+          <ul>
+            <li>
+              <h2>HELP</h2>
+              <a>FAQ's</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="list">
+          <ul>
+            <li>
+              <img src="/images/play-store.svg" alt="">
+              <img src="/images/app-store.svg" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+<script>
+
+    // load all webcam
+
+    Webcam.set({
+        width:950,
+        height:550,
+        image_formate:'jpeg',
+        jpeg_quality:90
+    })
+    Webcam.attach("#camera")
+
+    function take_snapshot(){
+        
+        Webcam.snap( function(data_uri) {
+          
+            document.getElementById('results').innerHTML = '<img src="' + data_uri + '" width="300px" height="150px">';
+        });
+    }
+</script>
+</html>
